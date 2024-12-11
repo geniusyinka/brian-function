@@ -1,0 +1,20 @@
+{
+  "name": "brian-fleek",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@brian-ai/sdk": "^0.3.5",
+    "dotenv": "^16.4.7"
+  }
+}
