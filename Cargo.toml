@@ -1,0 +1,22 @@
+[package]
+name = "brian-function"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "brian_function"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", default-features = false, features = ["rt"] }
+anyhow = "1.0"
+dotenv = "0.15"
+sgxkit = { git = "https://github.com/fleek-network/lightning", rev = "21542ac506c6cb8c281d6428f25055d5a8ce8b7e"}
+reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
