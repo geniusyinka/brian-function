@@ -8,18 +8,14 @@ name = "brian_function"
 path = "src/lib.rs"
 crate-type = ["cdylib", "rlib"]
 
-[[bin]]
-name = "brian-function"
-path = "src/main.rs"
-
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-reqwest = { version = "0.11", features = ["json"] }
-sgxkit = { git = "https://github.com/fleek-network/lightning", rev = "21542ac506c6cb8c281d6428f25055d5a8ce8b7e" }
+tokio = { version = "1.0", default-features = false, features = ["rt"] }
 anyhow = "1.0"
-wasm-bindgen = "0.2"
-tokio = { version = "1.0", features = ["rt"] }
+dotenv = "0.15"
+sgxkit = { git = "https://github.com/fleek-network/lightning", rev = "21542ac506c6cb8c281d6428f25055d5a8ce8b7e"}
+reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
 
 [profile.release]
 lto = "fat"
